@@ -2,12 +2,12 @@
 
 This repository contains scripts for simulating site frequency spectra with different distributions of fitness effects and classes of sites. 
 
-# Required scripts
+## Required scripts
 
 * snpdfe_spike_gen.withopts.m
 * test_anavar1.1_1class.py
 
-# Simple testing
+## Simple testing
 
 A simple implementation of the model with one class of sites can be run on a set of neutral simulated SNPs with no polarisation error as follows:
 
