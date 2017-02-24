@@ -35,11 +35,11 @@ def main():
                 test_script_cmd = ('~/anavar_simulations/test_anavar1.1_1class.py '
                                    '-n ' + n + ' '
                                    '-t1 ' + str(t) + ' '
-                                   '-g1 ' + str(g) + ' '
+                                   '-g1 " ' + str(g) + '" '
                                    '-e1 ' + str(error) + ' '
                                    '-o ' + new_out + ' '
                                    '>> ' + best_result_file)
-                q_print([test_script_cmd], out=new_out)
+                q_sub([test_script_cmd], out=new_out, t=1)
 
 
 if __name__ == '__main__':
