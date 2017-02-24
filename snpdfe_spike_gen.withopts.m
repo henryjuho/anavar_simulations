@@ -1,11 +1,11 @@
-(* scriptname n theta gamma e*)
+(* scriptname n theta gamma e filename*)
 n = ToExpression[$ScriptCommandLine[[2]]];
 folded = False; 
 \[Theta] = {ToExpression[$ScriptCommandLine[[3]]]};
 \[Gamma] = {ToExpression[$ScriptCommandLine[[4]]]};
 e = {ToExpression[$ScriptCommandLine[[4]]]};
 nrep = 2; 
-file = "/Users/Kai/Data/netbeans-c/Indel/tests/sim_data.txt"; 
+file = ToString[$ScriptCommandLine[[5]]];
 stream = OpenWrite[file, FormatType -> StandardForm]; 
 flag1 = True; 
 For[i = 1, i <= Length[\[Gamma]], i++, 

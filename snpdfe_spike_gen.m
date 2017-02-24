@@ -4,7 +4,7 @@ folded = False;
 \[Gamma] = {0};
 e = {0};
 nrep = 2; 
-file = "/Users/Kai/Data/netbeans-c/Indel/tests/sim_data.txt"; 
+file = "/fastdata/bop15hjb/anavar_sims/sim_data.txt";
 stream = OpenWrite[file, FormatType -> StandardForm]; 
 flag1 = True; 
 For[i = 1, i <= Length[\[Gamma]], i++, 
