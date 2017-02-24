@@ -35,7 +35,8 @@ def main():
     header = args.H
 
     # simulate data and read it in
-    sim_cmd = 'wolfram -script snpdfe_spike_gen.withopts.m ' + n + ' ' + theta + ' ' + gamma + ' ' + e + ' ' + sfs_file
+    sim_cmd = ('wolfram -script ~/anavar_simulations/snpdfe_spike_gen.withopts.m ' +
+               n + ' ' + theta + ' ' + gamma + ' ' + e + ' ' + sfs_file)
     subprocess.call(sim_cmd, shell=True)
     sfs = read_sim_sfs(sfs_file)
 
