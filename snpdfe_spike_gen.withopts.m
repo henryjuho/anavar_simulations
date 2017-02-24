@@ -1,5 +1,6 @@
 (* scriptname n theta gamma e filename*)
 n = ToExpression[$ScriptCommandLine[[2]]];
+Print n;
 folded = False; 
 \[Theta] = {ToExpression[$ScriptCommandLine[[3]]]};
 \[Gamma] = {ToExpression[$ScriptCommandLine[[4]]]};
