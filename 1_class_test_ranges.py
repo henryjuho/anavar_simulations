@@ -39,7 +39,7 @@ def main():
                                    '-e1 ' + str(error) + ' '
                                    '-o ' + new_out + ' '
                                    '>> ' + best_result_file)
-                q_sub([test_script_cmd], out=new_out, t=1)
+                q_sub([test_script_cmd], out=new_out, t=1, jid='paramcomb' + str(counter) + '.sh')
 
 
 if __name__ == '__main__':
