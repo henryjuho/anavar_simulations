@@ -2,6 +2,10 @@
 
 This repository contains scripts for simulating site frequency spectra with different distributions of fitness effects and classes of sites. 
 
+## Required programs
+
+* anavar1.1
+
 ## Required scripts
 
 * snpdfe_spike_gen.withopts.m
