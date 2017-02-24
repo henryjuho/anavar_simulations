@@ -22,3 +22,11 @@ $ cat 1class_tests_1setsnps.bestlnL.txt
 run	imp	exit_code	data_1_theta_1	data_1_gamma_1	data_1_e_1	lnL	sim_theta_1	sim_gamma_1	sim_e_1
 70	3	3	1055.99173407747	-0.441685579330643	0.0114752385708097	16677.7198398418	1000	0	0
 ```
+
+## Multiple parameter combinations, 1 set of SNPs, 1 class of sites
+
+660 parameter combinations run as follows:
+
+```
+anavar_simulations/1_class_test_ranges.py -n 20 -t1_r 100,1100,50 -g1_r ' -50,60,10' -e1_r 1,4,1 -o /fastdata/bop15hjb/anavar_sims/1class_tests_1setsnps -bestlnL /fastdata/bop15hjb/anavar_sims/1class_tests_1setsnps.bestlnL.txt 
+```
