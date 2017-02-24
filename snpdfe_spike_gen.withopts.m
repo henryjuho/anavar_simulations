@@ -1,12 +1,12 @@
 (* scriptname n theta gamma e filename*)
-n = ToExpression[$ScriptCommandLine[[2]]];
+n = ToExpression[$CommandLine[[4]]];
 Print n;
 folded = False; 
-\[Theta] = {ToExpression[$ScriptCommandLine[[3]]]};
-\[Gamma] = {ToExpression[$ScriptCommandLine[[4]]]};
-e = {ToExpression[$ScriptCommandLine[[4]]]};
+\[Theta] = {ToExpression[$CommandLine[[5]]]};
+\[Gamma] = {ToExpression[$CommandLine[[6]]]};
+e = {ToExpression[$CommandLine[[7]]]};
 nrep = 2; 
-file = ToString[$ScriptCommandLine[[5]]];
+file = ToString[$CommandLine[[8]]];
 stream = OpenWrite[file, FormatType -> StandardForm]; 
 flag1 = True; 
 For[i = 1, i <= Length[\[Gamma]], i++, 
