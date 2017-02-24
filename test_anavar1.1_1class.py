@@ -67,7 +67,7 @@ def main():
     subprocess.call(anavar_cmd, shell=True)
 
     # extract and print best result
-    results = open(results_file).readlines()[4-6]
+    results = open(results_file).readlines()[4:6]
     header_line = results[0].rstrip('\n') + '\tsim_theta_1\tsim_gamma_1\tsim_e_1'
     best_result = results[1].rstrip('\n') + '\t' + '\t'.join([theta, gamma, e])
     if header is True:
