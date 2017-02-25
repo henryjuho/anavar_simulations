@@ -30,3 +30,13 @@ run	imp	exit_code	data_1_theta_1	data_1_gamma_1	data_1_e_1	lnL	sim_theta_1	sim_g
 ```
 anavar_simulations/1_class_test_ranges.py -n 20 -t1_r 100,1100,50 -g1_r ' -50,60,10' -e1_r 1,4,1 -o /fastdata/bop15hjb/anavar_sims/1class_tests_1setsnps -bestlnL /fastdata/bop15hjb/anavar_sims/1class_tests_1setsnps.bestlnL.txt 
 ```
+
+The resulting data was then plotted as follows:
+
+```
+ rscript 1class_anavar1.1_plots.R 1class_tests_1setsnps.bestlnL.txt 
+```
+
+![theta](1class.1snps.anavar1.1.theta.jpg)
+![gamma](1class.1snps.anavar1.1.gamma.jpg)
+![error](1class.1snps.anavar1.1.error.jpg)
