@@ -6,7 +6,7 @@ input_file = args[1]
 test_data = subset(read.delim(input_file), sim_e_1 != 0)
 
 f <- function(x) {
-  r <- quantile(x, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))
+  r <- quantile(x, probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
   names(r) <- c("ymin", "lower", "middle", "upper", "ymax")
   r
 }
