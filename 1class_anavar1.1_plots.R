@@ -23,7 +23,7 @@ summarised_error = summarise(group_by(test_data, sim_e_1),
 
 theta <- ggplot(summarised_theta, aes(x=sim_theta_1, y=meanTheta)) + 
   geom_point(stat='identity') +
-  geom_errorbar(aes(ymin=lwr, ymax=upr)) +
+  geom_pointrange(aes(ymin=lwr, ymax=upr)) +
   geom_abline(intercept=0, slope=1, colour='tomato3') +
   theme_bw(base_size = 10) +
   facet_wrap(~sim_e_1, ncol = 3) +
@@ -36,7 +36,7 @@ ggsave('1class.1snps.anavar1.1.theta.jpg', theta, width=15, height=7)
 
 gamma <- ggplot(summarised_gamma, aes(x=sim_gamma_1, y=meanGamma)) +
 geom_point(stat='identity') +
-geom_errorbar(aes(ymin=lwr, ymax=upr)) +
+geom_pointrange(aes(ymin=lwr, ymax=upr)) +
 geom_abline(intercept=0, slope=1, colour='tomato3') +
 theme_bw(base_size = 10) +
 facet_wrap(~sim_e_1, ncol = 3) +
@@ -49,7 +49,7 @@ ggsave('1class.1snps.anavar1.1.gamma.jpg', gamma, width=15, height=7)
 
 error <- ggplot(summarised_error, aes(x=sim_e_1, y=meanE)) +
 geom_point(stat='identity') +
-geom_errorbar(aes(ymin=lwr, ymax=upr)) +
+geom_pointrange(aes(ymin=lwr, ymax=upr)) +
 geom_abline(intercept=0, slope=1, colour='tomato3') +
 theme_bw(base_size = 10) +
 labs(x=expression(e[simulated]), y=expression(e[predicted])) +
