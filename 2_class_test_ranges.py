@@ -63,7 +63,7 @@ def main():
                             error2 = float(e2)/10.0
                             counter += 1
                             new_out = out + '.combi' + str(counter)
-                            test_script_cmd = ('~/anavar_simulations/test_anavar1.1_1class.py '
+                            test_script_cmd = ('~/anavar_simulations/test_anavar1.1_2class.py '
                                                '-n ' + n + ' '
                                                '-t1 ' + str(t) + ' '
                                                '-t2 ' + str(t2) + ' '
