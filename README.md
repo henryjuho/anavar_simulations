@@ -23,7 +23,8 @@ run	imp	exit_code	data_1_theta_1	data_1_gamma_1	data_1_e_1	lnL	sim_theta_1	sim_g
 70	3	3	1055.99173407747	-0.441685579330643	0.0114752385708097	16677.7198398418	1000	0	0
 ```
 
-## Multiple parameter combinations, 1 set of SNPs, 1 class of sites
+## Multiple parameter combinations
+### 1 set of SNPs, 1 class of sites
 
 660 parameter combinations run as follows:
 
@@ -39,4 +40,12 @@ The resulting data was then plotted as follows:
 
 ![theta](1class.1snps.anavar1.1.theta.jpg)
 ![gamma](1class.1snps.anavar1.1.gamma.jpg)
-![error](1class.1snps.anavar1.1.error.jpg)
+error plot: <1class.1snps.anavar1.1.error.jpg>
+
+### 1 set of SNPs, 2 classes of sites
+
+17820 parameter combinations with two site classes were run as follows:
+
+```
+anavar_simulations/2_class_test_ranges.py -n 20 -t1_r 100,1100,50 -t2_r 100,1100,450 -g1_r "' -50,60,10'" -g2_r "' -50,20,30'" -e1_r 1,4,1 -e2_r 1,4,1 -o /fastdata/bop15hjb/anavar_sims/2class_sims/2class_test_1setsnps -bestlnL /fastdata/bop15hjb/anavar_sims/2class_sims/2class_test_1setsnps.bestlnL.txt -sub
+```
