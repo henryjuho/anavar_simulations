@@ -35,7 +35,7 @@ anavar_simulations/1_class_test_ranges.py -n 20 -t1_r 100,1100,50 -g1_r ' -50,60
 The resulting data was then plotted as follows:
 
 ```
- rscript 1class_anavar1.1_plots.R 1class_tests_1setsnps.bestlnL.txt 
+rscript 1class_anavar1.1_plots.R 1class_tests_1setsnps.bestlnL.txt 
 ```
 
 ![theta](1class.1snps.anavar1.1.theta.jpg)
@@ -51,6 +51,10 @@ anavar_simulations/2_class_test_ranges.py -n 20 -t1_r 100,1100,50 -t2_r 100,1100
 ```
 
 The resulting data was then plotted as follows:
+
+```
+rscript 2class_anavar1.1_plots.R 2class_test_1setsnps.bestlnL.txt 
+```
 
 ![theta](2class.1snps.anavar1.1.theta.jpg)
 ![gamma](2class.1snps.anavar1.1.gamma.jpg)
