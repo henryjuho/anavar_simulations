@@ -49,3 +49,9 @@ error plot: <1class.1snps.anavar1.1.error.jpg>
 ```
 anavar_simulations/2_class_test_ranges.py -n 20 -t1_r 100,1100,50 -t2_r 100,1100,450 -g1_r "' -50,60,10'" -g2_r "' -50,20,30'" -e1_r 1,4,1 -e2_r 1,4,1 -o /fastdata/bop15hjb/anavar_sims/2class_sims/2class_test_1setsnps -bestlnL /fastdata/bop15hjb/anavar_sims/2class_sims/2class_test_1setsnps.bestlnL.txt -sub
 ```
+
+The resulting data was then plotted as follows:
+
+![theta](2class.1snps.anavar1.1.theta.jpg)
+![gamma](2class.1snps.anavar1.1.gamma.jpg)
+![error](2class.1snps.anavar1.1.error.jpg)
