@@ -39,7 +39,7 @@ def main():
     gamma2 = args.g2
     e1 = args.e1
     e2 = args.e2
-    nreps = args.nreps
+    nreps = args.nrep
     out = args.o
     sfs_file = out + '.sfs.txt'
     header = args.H
