@@ -76,7 +76,7 @@ def main():
                                                '-nrep ' + nrep + ' '
                                                '-o ' + new_out + ' '
                                                '>> ' + best_result_file)
-                            q_wait(test_script_cmd, new_out, 1, 'paramcomb' + str(counter) + '.sh', 1500)
+                            q_wait(test_script_cmd, new_out, 24, 'paramcomb' + str(counter) + '.sh', 1500)
 
 
 if __name__ == '__main__':
