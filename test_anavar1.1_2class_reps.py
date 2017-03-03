@@ -11,7 +11,7 @@ def read_sim_sfs(sfs_file):
     :param sfs_file: str
     :return: list
     """
-    sfs_line = [',\t'.join(x.split()) for x in open(sfs_file).readlines()[0].split('\n')[:-1]]
+    sfs_line = [',\t'.join(x.rstrip('\n').split()) for x in open(sfs_file).readlines()[:-1]]
     return sfs_line
 
 
