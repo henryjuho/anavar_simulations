@@ -38,9 +38,9 @@ The resulting data was then plotted as follows:
 rscript 1class_anavar1.1_plots.R 1class_tests_1setsnps.bestlnL.txt 
 ```
 
-![theta](1class.1snps.anavar1.1.theta.jpg)
-![gamma](1class.1snps.anavar1.1.gamma.jpg)
-error plot: <1class.1snps.anavar1.1.error.jpg>
+theta_plot: [](1class.1snps.anavar1.1.theta.jpg)
+gamma plot:[](1class.1snps.anavar1.1.gamma.jpg)
+error plot: [](1class.1snps.anavar1.1.error.jpg)
 
 ### 1 set of SNPs, 2 classes of sites
 
@@ -56,9 +56,9 @@ The resulting data was then plotted as follows:
 rscript 2class_anavar1.1_plots.R 2class_test_1setsnps.bestlnL.txt 
 ```
 
-![theta](2class.1snps.anavar1.1.theta.jpg)
-![gamma](2class.1snps.anavar1.1.gamma.jpg)
-![error](2class.1snps.anavar1.1.error.jpg)
+theta plot: [](2class.1snps.anavar1.1.theta.jpg)
+gamma plot: [](2class.1snps.anavar1.1.gamma.jpg)
+error plot: [](2class.1snps.anavar1.1.error.jpg)
 
 ### 1 set of SNPs, 2 class of sites, 100 replicates per combination
 
@@ -66,4 +66,12 @@ rscript 2class_anavar1.1_plots.R 2class_test_1setsnps.bestlnL.txt
 
 ```
 anavar_simulations/2_class_test_ranges.v2.py -n 20 -t1_r 500,1100,500 -t2_r 100,400,200 -g1_r "' -25,0,20'" -g2_r "' -10,5,10'" -e1_r 0,1,1 -e2_r 0,1,1 -nrep 100 -o /fastdata/bop15hjb/anavar_sims/2class_sims_reps/16_paramcombs -bestlnL /fastdata/bop15hjb/anavar_sims/2class_sims_reps/16_paramcombs_bestlnL.txt -sub
+```
+
+### 1 set of SNPs, 2 class of sites, 100 replicates per combination high theta
+
+16 parameter combinations, each repeated 100 times were run as follows:
+
+```
+anavar_simulations/2_class_test_ranges.v3.py -n 20 -t1_r 5000,11000,5000 -t2_r 1000,4000,2000 -g1_r ' -25,0,20' -g2_r ' -10,5,10' -e1_r 0,1,1 -e2_r 0,1,1 -nrep 100 -o /fastdata/bop15hjb/anavar_sims/2class_sims_reps_corrected_highertheta/16_paramcombs_hightheta -bestlnL /fastdata/bop15hjb/anavar_sims/2class_sims_reps_corrected_highertheta/16_paramcombs_hightheta_bestlnL.txt
 ```
