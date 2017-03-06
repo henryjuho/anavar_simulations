@@ -74,7 +74,7 @@ def main():
                             'type: snp\n'
                             'n: ' + n + '\n'
                             'm: 1\n'
-                            'folded: ' + folded + '\n'
+                            'folded: ' + folded.lower() + '\n'
                             'sfs: ' + spectrum + '\n'
                             'dfe: discrete\n'
                             'c: 2\n'
