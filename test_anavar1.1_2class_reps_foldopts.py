@@ -63,7 +63,9 @@ def main():
         log_file = out + '.rep' + str(rep_counter) + '.log.txt'
 
         # write control file
-        control_contents = ('num_sets: 1\n'
+        control_contents = ('num_sets: 1\n\n'
+                            'use_r: false\n'
+                            'r_range:\n\n'
                             'search_algorithm: NLOPT_LD_SLSQP\n'
                             'maxeval: 100000\n'
                             'maxtime: 600\n'
