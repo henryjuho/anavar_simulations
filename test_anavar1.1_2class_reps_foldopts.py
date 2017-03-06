@@ -80,7 +80,7 @@ def main():
                             'sfs: ' + spectrum + '\n'
                             'dfe: discrete\n'
                             'c: 2\n'
-                            'theta_range: 1, 10000\n'
+                            'theta_range: 1, 20000\n'
                             'gamma_range: -500, 100\n'
                             'e_range: 0, 1\n'
                             'end[data_1]')
