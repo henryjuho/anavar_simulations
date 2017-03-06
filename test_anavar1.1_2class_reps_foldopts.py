@@ -83,6 +83,7 @@ def main():
                             'theta_range: 1, 20000\n'
                             'gamma_range: -500, 100\n'
                             'e_range: 0, 1\n'
+                            'constraint: none\n\n'
                             'end[data_1]')
         with open(control_file, 'w') as control:
             control.write(control_contents)
