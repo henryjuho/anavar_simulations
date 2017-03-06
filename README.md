@@ -75,3 +75,28 @@ anavar_simulations/2_class_test_ranges.v2.py -n 20 -t1_r 500,1100,500 -t2_r 100,
 ```
 anavar_simulations/2_class_test_ranges.v3.py -n 20 -t1_r 5000,11000,5000 -t2_r 1000,4000,2000 -g1_r ' -25,0,20' -g2_r ' -10,5,10' -e1_r 0,1,1 -e2_r 0,1,1 -nrep 100 -o /fastdata/bop15hjb/anavar_sims/2class_sims_reps_corrected_highertheta/16_paramcombs_hightheta -bestlnL /fastdata/bop15hjb/anavar_sims/2class_sims_reps_corrected_highertheta/16_paramcombs_hightheta_bestlnL.txt
 ```
+
+### 1 set of folded SNPs, 2 class of sites, 100 reps, 1 parameter combination
+
+```bash
+#!/bin/bash
+
+#$-l arch=intel*
+#$-l h_rt=8:00:00
+#$-l mem=6G
+#$-l rmem=2G
+
+#$-P evolgen
+#$-q evolgen.q
+
+#$-N qsub_1_folded_comb_job.sh
+#$-o /fastdata/bop15hjb/anavar_sims/2class_sims_hightheta_folded/1_folded_comb.out
+#$-e /fastdata/bop15hjb/anavar_sims/2class_sims_hightheta_folded/1_folded_comb.error
+
+anavar_simulations/test_anavar1.1_2class_reps_foldopts.py -n 20 -t1 10000 -t2 3000 -g1 ' -5' -g2 0 -e1 0 -e2 0 -nrep 100 -folded -o /fastdata/bop15hjb/anavar_sims/2class_sims_hightheta_folded/1_folded_comb >> /fastdata/bop15hjb/anavar_sims/2class_sims_hightheta_folded/1_folded_comb_bestlnL.txt
+```
+Submitted as follows:
+
+```
+qsub /fastdata/bop15hjb/anavar_sims/2class_sims_hightheta_folded/one_comb_job.sh
+```
