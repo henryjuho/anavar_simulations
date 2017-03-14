@@ -112,11 +112,13 @@ def main():
             results = open(results_file).readlines()[4:6]
             header_line = results[0].rstrip('\n')
             if classes == 2:
-                header_line += '\tsim_theta_1\tsim_theta_2\tsim_gamma_1\tsim_gamma_2\tsim_e_1\tsim_e_2\tmodel'
-                best_result = results[1].rstrip('\n') + '\t' + '\t'.join([theta1, theta2, gamma1, gamma2, e1, e2, x])
+                header_line += '\tsim_theta_1\tsim_theta_2\tsim_gamma_1\tsim_gamma_2\tsim_e_1\tsim_e_2\tmodel\trep'
+                best_result = results[1].rstrip('\n') + '\t' + \
+                    '\t'.join([theta1, theta2, gamma1, gamma2, e1, e2, x, str(rep_counter)])
             else:
                 header_line += '\tsim_theta_1\tsim_gamma_1\tsim_e_1\tmodel'
-                best_result = results[1].rstrip('\n') + '\t' + '\t'.join([theta1, gamma1, e1, x])
+                best_result = results[1].rstrip('\n') + '\t' + \
+                    '\t'.join([theta1, gamma1, e1, x, str(rep_counter)])
             if rep_counter == 1 and x == 'full':
                 print(header_line)
             print(best_result)
