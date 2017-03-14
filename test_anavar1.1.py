@@ -29,6 +29,8 @@ def main():
     parser.add_argument('-e2', help='Error 2', default='None')
     parser.add_argument('-nrep', help='Number of replicates', required=True)
     parser.add_argument('-folded', help='If specified will run in folded mode', default=False, action='store_true')
+    parser.add_argument('-const', help='Variable to contstrain, ie error, gamma', default='none',
+                        choices=['none', 'error'])
     parser.add_argument('-o', help='Output dir and file prefix', required=True)
     parser.add_argument('-H', help='If specified will print header in output', default=False, action='store_true')
     args = parser.parse_args()
@@ -44,9 +46,14 @@ def main():
     nreps = args.nrep
     out = args.o
     folded = str(args.folded)
+    constraint = args.const
     sfs_file = out + '.sfs.txt'
     header = args.H
     classes = 2
+
+    # constraint dict
+    constraint_dict = {'none': {1: 'none', 2: 'none'},
+                       'error': {1: 'constant{data_1_e_1, 0}', 2: 'constant{data_1_e_1, 0}; constant{data_1_e_2, 0}'}}
 
     # checks
     if 'None' in [theta2, gamma2, e2]:
@@ -97,7 +104,7 @@ def main():
                             'theta_range: 1, 100000\n'
                             'gamma_range: -500, 100\n'
                             'e_range: 0, 1\n'
-                            'constraint: none\n\n'
+                            'constraint: ' + constraint_dict[constraint][classes] + '\n\n'
                             'end[data_1]')
         with open(control_file, 'w') as control:
             control.write(control_contents)
