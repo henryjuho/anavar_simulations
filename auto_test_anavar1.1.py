@@ -75,6 +75,10 @@ def main():
         for t2 in theta_2s:
             for g in gamma_1s:
                 for g2 in gamma_2s:
+                    if g2 == 'None':
+                        g2_str = g2
+                    else:
+                        g2_str = '" ' + str(g) + '"'
                     for e in error_1s:
                         for e2 in error_2s:
                             counter += 1
@@ -85,7 +89,7 @@ def main():
                                                '-t1 ' + str(t) + ' '
                                                '-t2 ' + str(t2) + ' '
                                                '-g1 " ' + str(g) + '" '
-                                               '-g2 " ' + str(g2) + '" '
+                                               '-g2 ' + g2_str + ' '
                                                '-e1 ' + str(e) + ' '
                                                '-e2 ' + str(e2) + ' '
                                                '-nrep ' + nrep + ' '
