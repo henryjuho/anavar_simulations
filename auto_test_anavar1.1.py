@@ -78,7 +78,7 @@ def main():
                     if g2 == 'None':
                         g2_str = g2
                     else:
-                        g2_str = '" ' + str(g) + '"'
+                        g2_str = '" ' + str(g2) + '"'
                     for e in error_1s:
                         for e2 in error_2s:
                             counter += 1
