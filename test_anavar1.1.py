@@ -96,7 +96,7 @@ def main():
                                 'sfs: ' + spectrum + '\n'
                                 'dfe: discrete\n'
                                 'c: ' + str(classes) + '\n'
-                                'theta_range: 1, 100000\n'
+                                'theta_range: 1, 200000\n'
                                 'gamma_range: -500, 100\n'
                                 'e_range: 0, 1\n'
                                 'constraint: ' + constraint_dict[x][classes] + '\n\n'
