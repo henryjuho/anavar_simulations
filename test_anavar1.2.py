@@ -24,7 +24,7 @@ def main():
     parser.add_argument('-t1', help='Theta 1', required=True)
     parser.add_argument('-t2', help='Theta 2', default='None')
     parser.add_argument('-shape', help='Shape of the gamma distribution', required=True)
-    parser.add_argument('-scaLe', help='Scale parameter', requird=True)
+    parser.add_argument('-scaLe', help='Scale parameter', required=True)
     parser.add_argument('-e1', help='Error 1', required=True)
     parser.add_argument('-e2', help='Error 2', default='None')
     parser.add_argument('-nrep', help='Number of replicates', required=True)
