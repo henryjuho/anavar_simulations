@@ -1,10 +1,10 @@
 (* scriptname n theta1 shape scale e1 nrep folded filename*)
 n = ToExpression[$CommandLine[[4]]];
 folded = ToExpression[$CommandLine[[10]]];
-\[Theta] = {ToExpression[$CommandLine[[5]]]};
-shape = {ToExpression[$CommandLine[[6]]]};
-scale = {ToExpression[$CommandLine[[7]]]};
-e = {ToExpression[$CommandLine[[8]]]};
+\[Theta] = ToExpression[$CommandLine[[5]]];
+shape = ToExpression[$CommandLine[[6]]];
+scale = ToExpression[$CommandLine[[7]]];
+e = ToExpression[$CommandLine[[8]]];
 nrep = ToExpression[$CommandLine[[9]]];
 file = ToString[$CommandLine[[11]]];
 
