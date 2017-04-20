@@ -84,7 +84,7 @@ def main():
                                 'maxeval: 100000\n'
                                 'maxtime: 600\n'
                                 'num_searches: 20\n'
-                                'nnoimp: 3\n'
+                                'nnoimp: 1\n'
                                 'maximp: 5\n\n'
                                 'optional: false\n\n'
                                 'model: SNP_1\n'
