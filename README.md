@@ -100,3 +100,14 @@ Submitted as follows:
 ```
 qsub /fastdata/bop15hjb/anavar_sims/2class_sims_hightheta_folded/one_comb_job.sh
 ```
+
+# anavar1.2 testing
+## intial test 1 param comb 100 reps
+
+```
+anavar_simulations/test_anavar1.2_multi.py -n 50 -t1 100000 -shape 0.3 -scale 50 -e1 0 -nrep 100 -o /fastdata/bop15hjb/anavar_sims/anavar1.2/run_two_multi/test2
+~/anavar_simulations/extract_best_result.py -r_dir ./ -t1 100000 -shape 0.3 -scale 50 -e1 0 > test2.bestlnL.txt
+./process_anavar1.2_reps.py -in_dir ~/iceberg_fastdata/anavar_sims/anavar1.2/run_two_multi/> anavar1.2_estimates_run1.csv
+```
+
+results: <https://github.com/henryjuho/anavar_simulations/blob/master/anavar1.2_estimates_run1.csv>
