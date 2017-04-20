@@ -30,6 +30,7 @@ def main():
     parser.add_argument('-nrep', help='Number of replicates', required=True)
     parser.add_argument('-folded', help='If specified will run in folded mode', default=False, action='store_true')
     parser.add_argument('-o', help='Output dir and file prefix', required=True)
+    parser.add_argument('-evolgen', help='If specified will run on lab queue', default=False, action='store_true')
     args = parser.parse_args()
 
     # variables
@@ -108,7 +109,7 @@ def main():
 
             # run anavar1.2 on simulated data
             anavar_cmd = 'anavar1.2 ' + control_file + ' ' + results_file + ' ' + log_file
-            q_sub([anavar_cmd], out=results_file + '_runout', evolgen=True)
+            q_sub([anavar_cmd], out=results_file + '_runout', evolgen=args.evolgen)
 
             # # extract and print best result
             # results = open(results_file).readlines()[4:6]
