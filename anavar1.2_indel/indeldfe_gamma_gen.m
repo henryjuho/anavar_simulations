@@ -7,7 +7,7 @@ shape = {ToExpression[$CommandLine[[7]]], ToExpression[$CommandLine[[8]]]};
 scale = {ToExpression[$CommandLine[[9]]], ToExpression[$CommandLine[[10]]]};
 e = {ToExpression[$CommandLine[[11]]], ToExpression[$CommandLine[[12]]]};
 nrep = ToExpression[$CommandLine[[13]]];
-file = ToExpression[$CommandLine[[14]]];
+file = ToString[$CommandLine[[14]]];
 stream = OpenWrite[file, FormatType -> StandardForm]; 
 flag =  ! (AllTrue[shape, #1 > 0 & ] && AllTrue[scale, #1 > 0 & ]); 
 If[flag, WriteString[stream, "Error in the parameters\n"]; Abort[], 
