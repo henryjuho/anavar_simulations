@@ -107,7 +107,7 @@ def main():
                 control.write(control_contents)
 
             # run anavar1.2 on simulated data
-            anavar_cmd = '~/anavar1.2_indel/anavar ' + control_file + ' ' + results_file + ' ' + log_file
+            anavar_cmd = '~/anavar1.2_indel/anavar1.2/anavar ' + control_file + ' ' + results_file + ' ' + log_file
             q_sub([anavar_cmd], out=results_file + '_runout', evolgen=args.evolgen)
 
             # # extract and print best result
