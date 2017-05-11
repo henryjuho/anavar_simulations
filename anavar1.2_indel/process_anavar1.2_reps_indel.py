@@ -58,9 +58,9 @@ def main():
 
             # one class model
             # if len(header) == 12:
-            for est in ['theta', 'shape', 'scale', 'e']:
+            for par in ['theta', 'shape', 'scale', 'e']:
                 for var in ['ins_', 'del_']:
-                    est = var + est
+                    est = var + par
                     data = full[hpos[est]]
                     sim = full[hpos['sim_' + est]]
                     if est not in estimates.keys():
