@@ -35,8 +35,8 @@ for x in r_files:
     # extract and print best result
     results = open(results_file).readlines()[4:6]
     header_line = results[0].rstrip('\n')
-    header_line += ('\tsim_ins_theta\tsim_del_theta\tsim_ins_shape\tsim_del_shape\t'
-                    'sim_ins_scale\tsim_del_scale\tsim_ins_e\tsim_del_e\tmodel\trep')
+    header_line += ('\tsim_ins_theta\tsim_del_theta\tsim_ins_gamma\tsim_del_gamma\t'
+                    'sim_ins_e\tsim_del_e\tmodel\trep')
     if counter == 1:
         print header_line
     best_result = results[1].rstrip('\n') + '\t' + '\t'.join([ti, td, gi, gd, ei, ed, model, rep])
