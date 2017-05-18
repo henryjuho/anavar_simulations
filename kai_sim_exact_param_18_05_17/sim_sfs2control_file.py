@@ -17,6 +17,6 @@ for sfs_line in sys.stdin:
     with open(c_file[:c_file.rfind('.')] + '.rep' + str(counter) + '.control.txt', 'w') as out_control:
         for line in open(c_file):
             if line.startswith('sfs'):
-                out_control.write('sfs: ' + sfs_line + '\n')
+                out_control.write('sfs: ' + sfs_line)
             else:
                 out_control.write(line)
