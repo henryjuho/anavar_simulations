@@ -36,7 +36,7 @@ for x in r_files:
     results = open(results_file).readlines()[4:6]
     header_line = results[0].rstrip('\n')
     header_line += ('\tsim_theta_1\tsim_theta_2\tsim_gamma_1\tsim_gamma_2\t'
-                    'sim_e_1\tsim__e_2\tmodel\trep')
+                    'sim_e_1\tsim_e_2\tmodel\trep')
     if counter == 1:
         print header_line
     best_result = results[1].rstrip('\n') + '\t' + '\t'.join([ti, td, gi, gd, ei, ed, model, rep])
