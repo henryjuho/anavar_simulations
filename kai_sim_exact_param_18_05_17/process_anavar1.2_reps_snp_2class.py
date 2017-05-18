@@ -58,16 +58,34 @@ def main():
 
             # one class model
             # if len(header) == 12:
+            sim_same_pred = True
             for par in ['theta_', 'gamma_', 'e_']:
-                for var in ['1', '2']:
-                    est = par + var
-                    data = full[hpos[est]]
-                    sim = full[hpos['sim_' + est]]
-                    if est not in estimates.keys():
-                        estimates[est] = [data]
-                        simulated_values[est] = sim
+                data_1 = full[hpos[par + '1']]
+                data_2 = full[hpos[par + '2']]
+                sim_1 = full[hpos['sim_' + par + '1']]
+                sim_2 = full[hpos['sim_' + par + '2']]
+
+                if par == 'theta_':
+                    if abs(float(data_1)-float(sim_1)) < abs(float(data_1)-float(sim_2)):
+                        sim_same_pred = True
                     else:
-                        estimates[est].append(data)
+                        sim_same_pred = False
+
+                if sim_same_pred is True:
+                    pred_1 = data_1
+                    pred_2 = data_2
+                else:
+                    pred_1 = data_2
+                    pred_2 = data_1
+
+                if par + '1' not in estimates.keys():
+                    estimates[par + '1'] = [pred_1]
+                    estimates[par + '2'] = [pred_2]
+                    simulated_values[par + '1'] = sim_1
+                    simulated_values[par + '2'] = sim_2
+                else:
+                    estimates[par + '1'].append(pred_1)
+                    estimates[par + '2'].append(pred_2)
 
             # # two class model
             # else:
