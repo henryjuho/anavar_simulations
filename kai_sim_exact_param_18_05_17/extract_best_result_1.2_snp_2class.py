@@ -5,7 +5,7 @@ import os
 
 # arguments
 parser = argparse.ArgumentParser()
-parser.add_argument('-r_dir', help='Results file from anavar', required=True)
+parser.add_argument('-r_dir', help='Results file from anavar', required=True, action='append')
 parser.add_argument('-t1', help='Theta 1', required=True)
 parser.add_argument('-t2', help='Theta 2', required=True)
 parser.add_argument('-g1', help='Insertion 1', required=True)
@@ -15,8 +15,9 @@ parser.add_argument('-e2', help='Error 2', required=True)
 args = parser.parse_args()
 
 # variables
-r_files = sorted([[args.r_dir + x, int(x.split('.')[-4].strip('rep')), x.split('.')[-3]]
-                  for x in os.listdir(args.r_dir) if x.endswith('results.txt')], key=lambda y: [y[1], y[2]])
+r_files = sorted(sum([[[r + x, int(x.split('.')[-4].strip('rep')), x.split('.')[-3]]
+                       for x in os.listdir(r) if x.endswith('results.txt')] for r in args.rdir], []),
+                 key=lambda y: [y[1], y[2]])
 ti = args.t1
 td = args.t2
 gi = args.g1
