@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 # variables
 r_files = sorted(sum([[[r + x, int(x.split('.')[-4].strip('rep')), x.split('.')[-3]]
-                       for x in os.listdir(r) if x.endswith('results.txt')] for r in args.rdir], []),
+                       for x in os.listdir(r) if x.endswith('results.txt')] for r in args.r_dir], []),
                  key=lambda y: [y[1], y[2]])
 ti = args.t1
 td = args.t2
