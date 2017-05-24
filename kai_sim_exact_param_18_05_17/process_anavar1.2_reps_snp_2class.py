@@ -49,12 +49,12 @@ def main():
         hpos = {header[x]: x for x in range(0, len(header))}
         simulated_values = {}
         estimates = {}
-        # ratio_ps = []
+        ratio_ps = []
 
         # extract data from file, perform ratio test
-        for i in range(0, len(reps)):
+        for i in range(0, len(reps), 2):
             full = reps[i].split('\t')
-            # reduced = reps[i+1].split('\t')
+            reduced = reps[i+1].split('\t')
 
             # one class model
             # if len(header) == 12:
@@ -117,10 +117,10 @@ def main():
             #             else:
             #                 estimates[est + '_' + str(site_class)].append(data_tup[site_class-1])
 
-            # full_lnl = float(full[hpos['lnL']])
-            # reduced_lnl = float(reduced[hpos['lnL']])
-            # p = lnl_ratio_test(full_lnl, reduced_lnl, 1)
-            # ratio_ps.append(p)
+            full_lnl = float(full[hpos['lnL']])
+            reduced_lnl = float(reduced[hpos['lnL']])
+            p = lnl_ratio_test(full_lnl, reduced_lnl, 1)
+            ratio_ps.append(p)
 
         # fire up the calculator
         header = ''
