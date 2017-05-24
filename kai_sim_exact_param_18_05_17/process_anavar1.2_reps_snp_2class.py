@@ -130,7 +130,7 @@ def main():
             output_string += simulated_values[param] + ','
             output_string += ','.join([str(x) for x in summarise_estimates(estimates[param])]) + ','
         header += 'percent_sig'
-        output_string += '-'  # str(perecent_sig(ratio_ps))
+        output_string +=  str(perecent_sig(ratio_ps))
 
         if file_counter == 1:
             print(header)
