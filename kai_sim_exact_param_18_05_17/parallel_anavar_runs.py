@@ -13,5 +13,5 @@ for line in sys.stdin:
     log_file = control_file.replace('.control.txt', '.log.txt')
 
     q_sub(['cd {}'.format(pwd),
-           '~/anavar1.2_23_05_17 {} {} {}'.format(control_file, results_file, log_file)],
+           '~/anavar1.2_24_05_17 {} {} {}'.format(control_file, results_file, log_file)],
           out=pwd + '/' + control_file.replace('.control.txt', ''), t=2)
