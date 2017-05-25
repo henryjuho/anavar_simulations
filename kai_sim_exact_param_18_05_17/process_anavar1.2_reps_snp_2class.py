@@ -58,8 +58,6 @@ def main():
         full = reps[i].split('\t')
         reduced = reps[i+1].split('\t')
 
-        # one class model
-        # if len(header) == 12:
         sim_same_pred = True
         for par in ['theta_', 'gamma_', 'e_']:
             data_1 = full[hpos[par + '1']]
@@ -89,54 +87,24 @@ def main():
                 estimates[par + '1'].append(pred_1)
                 estimates[par + '2'].append(pred_2)
 
-        # # two class model
-        # else:
-        #     number_conserved = True
-        #     for est in ['theta', 'gamma', 'e']:
-        #         data_a = full[hpos['data_1_' + est + '_1']]
-        #         sim_1 = full[hpos['sim_' + est + '_1']]
-        #         data_b = full[hpos['data_1_' + est + '_2']]
-        #         sim_2 = full[hpos['sim_' + est + '_2']]
-        #
-        #         # order by theta
-        #         if est == 'theta':
-        #             if abs(float(data_a) - float(sim_1)) < abs(float(data_a) - float(sim_2)):
-        #                 number_conserved = True
-        #             else:
-        #                 number_conserved = False
-        #         if number_conserved is True:
-        #             data_tup = (data_a, data_b)
-        #         else:
-        #             data_tup = (data_b, data_a)
-        #
-        #         sim_tup = (sim_1, sim_2)
-        #
-        #         # add data to dict
-        #         for site_class in [1, 2]:
-        #             if est + '_' + str(site_class) not in estimates.keys():
-        #                 estimates[est + '_' + str(site_class)] = [data_tup[site_class-1]]
-        #                 simulated_values[est + '_' + str(site_class)] = sim_tup[site_class-1]
-        #             else:
-        #                 estimates[est + '_' + str(site_class)].append(data_tup[site_class-1])
-
         full_lnl = float(full[hpos['lnL']])
         reduced_lnl = float(reduced[hpos['lnL']])
         p = lnl_ratio_test(full_lnl, reduced_lnl, df)
         ratio_ps.append(p)
 
-        # fire up the calculator
-        header = ''
-        output_string = ''
-        for param in sorted(estimates.keys()):
-            header += param.join(['', '_sim,', '_mean,', '_sd,', '_lwr,', '_upr,'])
-            output_string += simulated_values[param] + ','
-            output_string += ','.join([str(x) for x in summarise_estimates(estimates[param])]) + ','
-        header += 'percent_sig'
-        output_string += str(perecent_sig(ratio_ps))
+    # fire up the calculator
+    header = ''
+    output_string = ''
+    for param in sorted(estimates.keys()):
+        header += param.join(['', '_sim,', '_mean,', '_sd,', '_lwr,', '_upr,'])
+        output_string += simulated_values[param] + ','
+        output_string += ','.join([str(x) for x in summarise_estimates(estimates[param])]) + ','
+    header += 'percent_sig'
+    output_string += str(perecent_sig(ratio_ps))
 
-        if file_counter == 1:
-            print(header)
-        print(output_string)
+    if file_counter == 1:
+        print(header)
+    print(output_string)
 
 if __name__ == '__main__':
     main()
