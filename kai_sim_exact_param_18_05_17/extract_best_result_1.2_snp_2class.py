@@ -26,6 +26,8 @@ ei = args.e1
 ed = args.e2
 counter = 0
 
+columns = ['run', 'imp', 'exit_code', 'theta_1', 'gamma_1', 'e_1', 'theta_2', 'gamma_2', 'e_2', 'lnL']
+
 # process files
 for x in r_files:
     counter += 1
@@ -35,10 +37,22 @@ for x in r_files:
 
     # extract and print best result
     results = open(results_file).readlines()[4:6]
+
     header_line = results[0].rstrip('\n')
+    header = header_line.split('\t')
+    hpos = {header[x]: x for x in range(0, len(header))}
+
     header_line += ('\tsim_theta_1\tsim_theta_2\tsim_gamma_1\tsim_gamma_2\t'
                     'sim_e_1\tsim_e_2\tmodel\trep')
     if counter == 1:
         print header_line
-    best_result = results[1].rstrip('\n') + '\t' + '\t'.join([ti, td, gi, gd, ei, ed, model, rep])
-    print(best_result)
+    best_result = results[1].rstrip('\n').split('\t')
+    result_line = ''
+    for col in columns:
+        try:
+            result_line += best_result[hpos[col]] + '\t'
+        except KeyError:
+            result_line += '0\t'
+
+    sim_output_info = '\t'.join([ti, td, gi, gd, ei, ed, model, rep])
+    print(result_line + '\t' + sim_output_info)
