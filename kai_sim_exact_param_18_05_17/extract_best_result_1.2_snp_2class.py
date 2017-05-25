@@ -55,4 +55,4 @@ for x in r_files:
             result_line += '0\t'
 
     sim_output_info = '\t'.join([ti, td, gi, gd, ei, ed, model, rep])
-    print(result_line + '\t' + sim_output_info)
+    print(result_line + sim_output_info)
