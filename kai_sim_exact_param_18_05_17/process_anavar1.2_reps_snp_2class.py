@@ -43,7 +43,7 @@ def main():
 
     # get mean, sd, 95% CIs and do log likelihood test for each file
     file_counter = 0
-    for param_comb in lnl_files:
+    with lnl_files as param_comb:  # in lnl_files:
         file_counter += 1
         pc_data = open(param_comb).readlines()
         header = pc_data[0].split('\t')
