@@ -33,11 +33,13 @@ def main():
 
     # arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument('-in_dir', help='Directory containing best lnL files', required=True)
+    parser.add_argument('-lnL', help='best lnL file', required=True)
+    parser.add_argument('-df', help='degrees of freedom', default=1, type=int)
     args = parser.parse_args()
 
     # variables
-    lnl_files = [args.in_dir + x for x in os.listdir(args.in_dir) if x.endswith('.bestlnL.txt')]
+    lnl_files = args.lnL  # [args.in_dir + x for x in os.listdir(args.in_dir) if x.endswith('.bestlnL.txt')]
+    df = args.df
 
     # get mean, sd, 95% CIs and do log likelihood test for each file
     file_counter = 0
@@ -119,7 +121,7 @@ def main():
 
             full_lnl = float(full[hpos['lnL']])
             reduced_lnl = float(reduced[hpos['lnL']])
-            p = lnl_ratio_test(full_lnl, reduced_lnl, 1)
+            p = lnl_ratio_test(full_lnl, reduced_lnl, df)
             ratio_ps.append(p)
 
         # fire up the calculator
@@ -130,7 +132,7 @@ def main():
             output_string += simulated_values[param] + ','
             output_string += ','.join([str(x) for x in summarise_estimates(estimates[param])]) + ','
         header += 'percent_sig'
-        output_string +=  str(perecent_sig(ratio_ps))
+        output_string += str(perecent_sig(ratio_ps))
 
         if file_counter == 1:
             print(header)
