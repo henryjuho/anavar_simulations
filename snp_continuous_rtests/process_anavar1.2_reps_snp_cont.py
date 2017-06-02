@@ -33,10 +33,12 @@ def main():
     # arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('-lnL', help='best lnL file', required=True)
+    parser.add_argument('-df', help='degrees of freedom', default=1, type=int)
     args = parser.parse_args()
 
     # variables
     lnl_files = args.lnL  # = [args.in_dir + x for x in os.listdir(args.in_dir) if x.endswith('.bestlnL.txt')]
+    df = args.df
 
     # get mean, sd, 95% CIs and do log likelihood test for each file
     pc_data = open(lnl_files).readlines()
@@ -65,7 +67,7 @@ def main():
 
         full_lnl = float(full[hpos['lnL']])
         reduced_lnl = float(reduced[hpos['lnL']])
-        p = lnl_ratio_test(full_lnl, reduced_lnl, 1)
+        p = lnl_ratio_test(full_lnl, reduced_lnl, df)
         ratio_ps.append(p)
 
     # fire up the calculator
