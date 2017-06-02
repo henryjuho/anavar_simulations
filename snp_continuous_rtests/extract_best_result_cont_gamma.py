@@ -5,7 +5,7 @@ import os
 
 # arguments
 parser = argparse.ArgumentParser()
-parser.add_argument('-r_dir', help='Results file from anavar', required=True)
+parser.add_argument('-r_dir', help='Results file from anavar', required=True, action='append')
 parser.add_argument('-t1', help='Theta 1', required=True)
 parser.add_argument('-shape', help='Shape of the gamma distribution', required=True)
 parser.add_argument('-scale', help='Scale parameter', required=True)
