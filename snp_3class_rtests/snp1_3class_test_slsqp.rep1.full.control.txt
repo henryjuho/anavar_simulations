@@ -1,0 +1,27 @@
+[algorithm_commands]
+search_algorithm: NLOPT_LD_LBFGS
+maxeval: 100000
+maxtime: 600
+num_searches: 5000
+nnoimp: 1
+maximp: 3
+optional: true
+size: 10000
+key: 3
+epsabs: 1e-20
+epsrel: 1e-9
+rftol: 1e-9
+
+
+[model_commands]
+model: SNP_1
+n: 50
+m: 5e5
+folded: false 
+sfs: 8476, 3938, 2375, 1685, 1176, 974, 765, 637, 551, 483, 438, 377, 390, 292, 252, 220, 208, 194, 178, 188, 145, 138, 141, 141, 122, 103, 97, 107, 100, 103, 93, 89, 86, 81, 96, 72, 76, 74, 80, 65, 67, 77, 84, 85, 79, 99, 119, 144, 275
+dfe: discrete
+c: 3
+theta_range: 1e-6, 0.1
+gamma_range: -250, 10
+e_range: 0, 0.5
+constraint: none
