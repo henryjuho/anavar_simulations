@@ -39,13 +39,12 @@ else:
             sfs_holder.append(sfs_line)
 
             if len(sfs_holder) == 2:
-
                 with open(out_dir + c_file[:c_file.rfind('.')] + '.rep' + str(counter) +
                           '.' + model + '.control.txt', 'w') as out_control:
                     for line in open(c_file):
                         if line.startswith('ins_sfs'):
-                            out_control.write('ins_sfs: ' + sfs_line[0])
+                            out_control.write('ins_sfs: ' + sfs_holder[0])
                         elif line.startswith('del_sfs'):
-                            out_control.write('del_sfs: ' + sfs_line[1])
+                            out_control.write('del_sfs: ' + sfs_holder[1])
                         else:
                             out_control.write(line)
