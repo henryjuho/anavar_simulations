@@ -42,12 +42,10 @@ else:
 
                 with open(out_dir + c_file[:c_file.rfind('.')] + '.rep' + str(counter) +
                           '.' + model + '.control.txt', 'w') as out_control:
-                    sfs_count = 0
                     for line in open(c_file):
-                        sfs_count += 1
-                        if line.startswith('sfs') and sfs_count == 1:
-                            out_control.write('sfs: ' + sfs_line[0])
-                        elif line.startswith('sfs') and sfs_count == 2:
-                            out_control.write('sfs: ' + sfs_line[1])
+                        if line.startswith('ins_sfs'):
+                            out_control.write('ins_sfs: ' + sfs_line[0])
+                        elif line.startswith('del_sfs'):
+                            out_control.write('del_sfs: ' + sfs_line[1])
                         else:
                             out_control.write(line)
