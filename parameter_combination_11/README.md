@@ -7,4 +7,6 @@ $ cat 100_sfs_indels_1class_2e6.txt | ~/anavar_simulations/scripts/sim_sfs2contr
 
 $ ls full/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py
 $ ls neutral/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py
+
+# awaiting model updates
 ```
