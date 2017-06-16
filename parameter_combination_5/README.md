@@ -9,6 +9,7 @@ $ cat 100sfs_2neg_g_1e6bp.txt | ~/anavar_simulations/scripts/sim_sfs2control_fil
 $ cat 100sfs_2neg_g_1e6bp.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -control_file rtest_2class_snp_no_pol.1e6bp.txt -model reduced -out_dir no_pol/
 $ cat 100sfs_2neg_g_1e6bp.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -control_file rtest_2class_snp_full.1e6bp.txt -model full -out_dir full/
 $ cat 100sfs_2neg_g_1e6bp.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -control_file rtest_2class_snp_no_pol_gmax200.1e6bp.txt -model reduced -out_dir no_pol_gmax200/
+$ cat 100sfs_2neg_g_1e6bp.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -control_file rtest_2class_snp_no_pol_gmax5000.1e6bp.txt -model reduced -out_dir no_pol_gmax5000/
 
 $ ls full/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py 
 $ ls equal_t/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py 
@@ -16,6 +17,9 @@ $ ls equal_e/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py
 $ ls equal_all/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py
 $ ls no_pol/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py 
 $ ls no_pol_gmax200/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py
+$ ls no_pol_gmax5000/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py
+
+# awaiting gmax5000 results
 
 $ ~/anavar_simulations/scripts/extract_best_result_1.2_snp_2class.py -r_dir full/ -r_dir equal_all/ -t1 0.005 -t2 0.01 -g1 " -5" -g2 " -20" -e1 0.05 -e2 0.01 > rtest_2class_snp_full_equal_all_2neg_g_1e6bp.bestlnL.txt
 $ ~/anavar_simulations/scripts/extract_best_result_1.2_snp_2class.py -r_dir full/ -r_dir equal_t/ -t1 0.005 -t2 0.01 -g1 " -5" -g2 " -20" -e1 0.05 -e2 0.01 > rtest_2class_snp_full_equal_t_2neg_g_1e6bp.bestlnL.txt

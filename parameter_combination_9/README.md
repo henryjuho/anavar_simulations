@@ -6,11 +6,15 @@ $ cat 100sfs_3class.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -
 $ cat 100sfs_3class.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -control_file comb_9_equal_pol.txt -model reduced -out_dir equal_pol/
 $ cat 100sfs_3class.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -control_file comb_9_2class.txt -model reduced -out_dir 2class/   
 $ cat 100sfs_3class.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -control_file comb_9_no_pol_gmax200.txt -model reduced -out_dir no_pol_gmax200/
+$ cat 100sfs_3class.txt | ~/anavar_simulations/scripts/sim_sfs2control_file.py -control_file comb_9_no_pol_gmax5000.txt -model reduced -out_dir no_pol_gmax5000/
 
 $ ls full/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py 
 $ ls equal_pol/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py 
 $ ls 2class/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py 
 $ ls no_pol_gmax200/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py -evolgen
+$ ls no_pol_gmax5000/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py
+
+# awaiting gmax5000 results
 
 $ ~/anavar_simulations/scripts/extract_best_result_3class.py -t 0.002,0.006,0.002 -g 0,-5,-30 -e 0.05,0.02,0.01 -r_dir full/ -r_dir equal_pol/ > comb_9_full_equal_pol.bestlnL.txt
 $ ~/anavar_simulations/scripts/extract_best_result_3class.py -t 0.002,0.006,0.002 -g 0,-5,-30 -e 0.05,0.02,0.01 -r_dir full/ -r_dir 2class/ > comb_9_full_2class.bestlnL.txt
