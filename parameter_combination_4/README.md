@@ -19,19 +19,19 @@ $ ls no_pol/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py
 $ ls no_pol_gmax200/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py 
 $ ls no_pol_gmax5000/*txt | ~/anavar_simulations/scripts/parallel_anavar_runs.py 
 
-# awaiting gmax5000 results
-
 $ ~/anavar_simulations/scripts/extract_best_result_1.2_snp_2class.py -r_dir full/ -r_dir equal_all/ -t1 0.005 -t2 0.01 -g1 " -5" -g2 " -20" -e1 0.05 -e2 0.01 > rtest_2class_snp_full_equal_all_2neg_g_1e5bp.bestlnL.txt
 $ ~/anavar_simulations/scripts/extract_best_result_1.2_snp_2class.py -r_dir full/ -r_dir equal_t/ -t1 0.005 -t2 0.01 -g1 " -5" -g2 " -20" -e1 0.05 -e2 0.01 > rtest_2class_snp_full_equal_t_2neg_g_1e5bp.bestlnL.txt
 $ ~/anavar_simulations/scripts/extract_best_result_1.2_snp_2class.py -r_dir full/ -r_dir equal_e/ -t1 0.005 -t2 0.01 -g1 " -5" -g2 " -20" -e1 0.05 -e2 0.01 > rtest_2class_snp_full_equal_e_2neg_g_1e5bp.bestlnL.txt
 $ ~/anavar_simulations/scripts/extract_best_result_1.2_snp_2class.py -r_dir full/ -r_dir no_pol/ -t1 0.005 -t2 0.01 -g1 " -5" -g2 " -20" -e1 0.05 -e2 0.01 > rtest_2class_snp_full_no_pol_2neg_g_1e5bp.bestlnL.txt
 $ ~/anavar_simulations/scripts/extract_best_result_1.2_snp_2class.py -r_dir full/ -r_dir no_pol_gmax200/ -t1 0.005 -t2 0.01 -g1 " -5" -g2 " -20" -e1 0.05 -e2 0.01 > rtest_2class_snp_full_no_pol_gmax200_2neg_g_1e5bp.bestlnL.txt
+$ ~/anavar_simulations/scripts/extract_best_result_1.2_snp_2class.py -r_dir full/ -r_dir no_pol_gmax5000/ -t1 0.005 -t2 0.01 -g1 " -5" -g2 " -20" -e1 0.05 -e2 0.01 > rtest_2class_snp_full_no_pol_gmax5000_2neg_g_1e5bp.bestlnL.txt
 
 $ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_2class.py -lnL rtest_2class_snp_full_equal_all_2neg_g_1e5bp.bestlnL.txt -df 3 > rtest_2class_snp_full_equal_all_2neg_g_1e5bp.csv
 $ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_2class.py -lnL rtest_2class_snp_full_equal_t_2neg_g_1e5bp.bestlnL.txt -df 1 > rtest_2class_snp_full_equal_t_2neg_g_1e5bp.csv
 $ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_2class.py -lnL rtest_2class_snp_full_equal_e_2neg_g_1e5bp.bestlnL.txt -df 1 > rtest_2class_snp_full_equal_e_2neg_g_1e5bp.csv
 $ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_2class.py -lnL rtest_2class_snp_full_no_pol_2neg_g_1e5bp.bestlnL.txt -df 2 > rtest_2class_snp_full_no_pol_2neg_g_1e5bp.csv
 $ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_2class.py -lnL rtest_2class_snp_full_no_pol_gmax200_2neg_g_1e5bp.bestlnL.txt -df 2 > rtest_2class_snp_full_no_pol_gmax200_2neg_g_1e5bp.csv
+$ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_2class.py -lnL rtest_2class_snp_full_no_pol_gmax5000_2neg_g_1e5bp.bestlnL.txt -df 2 > rtest_2class_snp_full_no_pol_gmax5000_2neg_g_1e5bp.csv
 
 $ head -n 1 rtest_2class_snp_full_equal_all_2neg_g_1e5bp.csv | while read i; do echo $i,reduction; done > rtest_2class_snp_2neg_g_1e5bp.csv
 $ grep -v ^e rtest_2class_snp_full_equal_all_2neg_g_1e5bp.csv | while read i; do echo $i,1class; done >> rtest_2class_snp_2neg_g_1e5bp.csv
@@ -39,4 +39,5 @@ $ grep -v ^e rtest_2class_snp_full_equal_t_2neg_g_1e5bp.csv | while read i; do e
 $ grep -v ^e rtest_2class_snp_full_equal_e_2neg_g_1e5bp.csv | while read i; do echo $i,equal_e; done >> rtest_2class_snp_2neg_g_1e5bp.csv
 $ grep -v ^e rtest_2class_snp_full_no_pol_2neg_g_1e5bp.csv | while read i; do echo $i,no_pol; done >> rtest_2class_snp_2neg_g_1e5bp.csv
 $ grep -v ^e rtest_2class_snp_full_no_pol_gmax200_2neg_g_1e5bp.csv | while read i; do echo $i,no_pol_gmax200; done >> rtest_2class_snp_2neg_g_1e5bp.csv
+$ grep -v ^e rtest_2class_snp_full_no_pol_gmax5000_2neg_g_1e5bp.csv | while read i; do echo $i,no_pol_gmax5000; done >> rtest_2class_snp_2neg_g_1e5bp.csv
 ```
