@@ -39,5 +39,5 @@ $ grep -v ^e rtest_2class_snp_full_equal_t_2neg_g_1e6bp.csv | while read i; do e
 $ grep -v ^e rtest_2class_snp_full_equal_e_2neg_g_1e6bp.csv | while read i; do echo $i,equal_e; done >> rtest_2class_snp_2neg_g_1e6bp.csv
 $ grep -v ^e rtest_2class_snp_full_no_pol_2neg_g_1e6bp.csv | while read i; do echo $i,no_pol; done >> rtest_2class_snp_2neg_g_1e6bp.csv
 $ grep -v ^e rtest_2class_snp_full_no_pol_gmax200_2neg_g_1e6bp.csv | while read i; do echo $i,no_pol_gmax200; done >> rtest_2class_snp_2neg_g_1e6bp.csv
-$ grep -v ^e rtest_2class_snp_full_no_pol_gmax200_2neg_g_1e6bp.csv | while read i; do echo $i,no_pol_gmax5000; done >> rtest_2class_snp_2neg_g_1e6bp.csv
+$ grep -v ^e rtest_2class_snp_full_no_pol_gmax5000_2neg_g_1e6bp.csv | while read i; do echo $i,no_pol_gmax5000; done >> rtest_2class_snp_2neg_g_1e6bp.csv
 ```
