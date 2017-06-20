@@ -30,16 +30,18 @@ if mode == 'SNP':
                     out_control.write(line)
 else:
     sfs_holder = []
+    rep_count = 1
     for sfs_line in sys.stdin:
         counter += 1
         if counter % 3 == 0:
             sfs_holder = []
+            rep_count += 1
             continue
         else:
             sfs_holder.append(sfs_line)
 
             if len(sfs_holder) == 2:
-                with open(out_dir + c_file[:c_file.rfind('.')] + '.rep' + str(counter) +
+                with open(out_dir + c_file[:c_file.rfind('.')] + '.rep' + str(rep_count) +
                           '.' + model + '.control.txt', 'w') as out_control:
                     for line in open(c_file):
                         if line.startswith('ins_sfs'):
