@@ -104,19 +104,19 @@ def main():
         # p = lnl_ratio_test(full_lnl, reduced_lnl, 1)
         # ratio_ps.append(p)
 
-        # fire up the calculator
-        header = ''
-        output_string = ''
-        for param in sorted(estimates.keys()):
-            header += param.join(['', '_sim,', '_mean,', '_sd,', '_lwr,', '_upr,'])
-            output_string += simulated_values[param] + ','
-            output_string += ','.join([str(x) for x in summarise_estimates(estimates[param])]) + ','
-        header += 'percent_sig'
-        output_string += '-'  # str(perecent_sig(ratio_ps))
+    # fire up the calculator
+    header = ''
+    output_string = ''
+    for param in sorted(estimates.keys()):
+        header += param.join(['', '_sim,', '_mean,', '_sd,', '_lwr,', '_upr,'])
+        output_string += simulated_values[param] + ','
+        output_string += ','.join([str(x) for x in summarise_estimates(estimates[param])]) + ','
+    header += 'percent_sig'
+    output_string += '-'  # str(perecent_sig(ratio_ps))
 
-        if file_counter == 1:
-            print(header)
-        print(output_string)
+    if file_counter == 1:
+        print(header)
+    print(output_string)
 
 if __name__ == '__main__':
     main()
