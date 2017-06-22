@@ -22,12 +22,12 @@ del_sfs: 845,	283,	134,	52,	27,	9,	5,	3,	4,	0,	1,	0,	0,	0,	1,	0,	0,	0,	0,	0,	0,	
 dfe: continuous
 distribution: reflected_gamma
 ins_theta_range: 1e-6, 0.1
-ins_shape_range: 0.1, 200
-ins_scale_range: 0.1, 200
+ins_shape_range: 1e-3, 200
+ins_scale_range: 0.1, 1e3
 ins_e_range: 0, 0.5
 del_theta_range: 1e-6, 0.1
-del_shape_range: 0.1, 200
-del_scale_range: 0.1, 200
+del_shape_range: 1e-3, 200
+del_scale_range: 0.1, 1e3
 del_e_range: 0, 0.5
 constraint: none
 optional: false
