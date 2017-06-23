@@ -5,7 +5,7 @@ import os
 
 # arguments
 parser = argparse.ArgumentParser()
-parser.add_argument('-r_dir', help='Results file from anavar', required=True)
+parser.add_argument('-r_dir', help='Results file from anavar', required=True, action='append')
 parser.add_argument('-ti', help='Theta insertions', required=True)
 parser.add_argument('-td', help='Theta deletions', required=True)
 parser.add_argument('-shi', help='Shape of the insertion gamma distribution', required=True)
