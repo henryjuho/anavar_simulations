@@ -32,7 +32,7 @@ counter = 0
 
 columns = ['run', 'imp', 'exit_code',
            'ins_theta', 'ins_shape', 'ins_scale', 'ins_e',
-           'del_theta', 'del_shape', 'ins_scale', 'del_e',
+           'del_theta', 'del_shape', 'del_scale', 'del_e',
            'lnL']
 
 # process files
