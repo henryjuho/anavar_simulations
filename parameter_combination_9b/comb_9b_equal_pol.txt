@@ -1,0 +1,27 @@
+[algorithm_commands]
+search_algorithm: NLOPT_LD_SLSQP
+maxeval: 100000
+maxtime: 600
+num_searches: 10000
+nnoimp: 1
+maximp: 3
+optional: true
+size: 10000
+key: 3
+epsabs: 1e-20
+epsrel: 1e-9
+rftol: 1e-9
+
+
+[model_commands]
+model: SNP_1
+n: 100
+m: 2e6
+folded: false 
+sfs: 
+dfe: discrete
+c: 3
+theta_range: 1e-8, 0.2
+gamma_range: -5000, 100
+e_range: 0, 1
+constraint: equal_pol_error
