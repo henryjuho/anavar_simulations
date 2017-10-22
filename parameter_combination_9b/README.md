@@ -19,12 +19,6 @@ $ ~/anavar_simulations/scripts/extract_best_result_3class.py -t 0.002,0.006,0.00
 $ ~/anavar_simulations/scripts/extract_best_result_3class.py -t 0.002,0.006,0.002 -g 0,-5,-30 -e 0.05,0.02,0.01 -r_dir full/ -r_dir 2class/ > comb_9b_full_2class.bestlnL.txt
 $ ~/anavar_simulations/scripts/extract_best_result_3class.py -t 0.002,0.006,0.002 -g 0,-5,-30 -e 0.05,0.02,0.01 -r_dir full/ -r_dir no_pol/ > comb_9b_full_no_pol.bestlnL.txt
 
-# percent runs complete = (line_count - 1) / 2
-$ ls *best* | while read i; do wc -l $i; done
-51 comb_9b_full_2class.bestlnL.txt # -> 25
-147 comb_9b_full_equal_pol.bestlnL.txt # -> 73
-175 comb_9b_full_no_pol.bestlnL.txt # -> 87
-
 $ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_3class.py -lnL comb_9b_full_equal_pol.bestlnL.txt -df 2 > comb_9b_full_equal_pol.csv 
 $ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_3class.py -lnL comb_9b_full_2class.bestlnL.txt -df 3 > comb_9b_full_2class.csv         
 $ ~/anavar_simulations/scripts/process_anavar1.2_reps_snp_3class.py -lnL comb_9b_full_no_pol.bestlnL.txt -df 3 > comb_9b_full_no_pol.csv
